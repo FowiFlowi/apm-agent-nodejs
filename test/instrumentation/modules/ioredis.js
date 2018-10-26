@@ -16,7 +16,7 @@ test('not nested', function (t) {
 
   agent.startTransaction('foo', 'bar')
 
-  var calls = 0
+  let calls = 0
 
   redis.flushall(function (err, reply) {
     t.error(err)
@@ -62,7 +62,7 @@ test('nested', function (t) {
   redis.flushall(function (err, reply) {
     t.error(err)
     t.equal(reply, 'OK')
-    var calls = 0
+    let calls = 0
 
     redis.set('foo', 'bar')
     redis.get('foo', function (err, result) {

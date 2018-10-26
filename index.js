@@ -1,5 +1,5 @@
 'use strict'
 
-var Agent = require('./lib/agent')
+const Agent = require('./lib/agent')
 
 module.exports = new Agent()

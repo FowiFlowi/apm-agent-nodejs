@@ -21,8 +21,8 @@ In the example below, we create an Express app that times how long it takes to:
 
 [source,js]
 ----
-var apm = require('elastic-apm-node').start()
-var app = require('express')()
+const apm = require('elastic-apm-node').start()
+const app = require('express')()
 
 // body reader middleware
 app.use(function (req, res, next) {
@@ -32,9 +32,9 @@ app.use(function (req, res, next) {
 
   // `startSpan` will only return a span if there's an
   // active transaction
-  var span = apm.startSpan('receiving body')
+  const span = apm.startSpan('receiving body')
 
-  var buffers = []
+  const buffers = []
   req.on('data', function (chunk) {
     buffers.push(chunk)
   })
@@ -57,7 +57,7 @@ app.use(function (req, res, next) {
 
   // start a span to measure the time it takes to parse
   // the JSON
-  var span = apm.startSpan('parse json')
+  const span = apm.startSpan('parse json')
 
   try {
     req.json = JSON.parse(req.body)

@@ -23,20 +23,20 @@ Example of a background job application polling the SQS queuing system for jobs:
 
 [source,js]
 ----
-var apm = require('elastic-apm-node').start()
-var sqs = require('simple-sqs')()
+const apm = require('elastic-apm-node').start()
+const sqs = require('simple-sqs')()
 
 // listen for jobs on the queue
-var queue = sqs(queueUrl, function (msg, cb) {
+const queue = sqs(queueUrl, function (msg, cb) {
   // The SQS queue will send multiple messages using an array
   // of records
-  var tasks = msg.Body.Records.map(function (job) {
+  const tasks = msg.Body.Records.map(function (job) {
     return new Promise(function (resolve, reject) {
       // start one new transaction for each job record received
       // on the queue
-      var name = 'Job ' + job.type
-      var type = 'job'
-      var trans = apm.startTransaction(name, type)
+      const name = 'Job ' + job.type
+      const type = 'job'
+      const trans = apm.startTransaction(name, type)
 
       // call the function that actually processes the job
       processJob(job, function (err) {

@@ -46,7 +46,7 @@ test(function (t) {
   client.flushall(function (err, reply) {
     t.error(err)
     t.equal(reply, 'OK')
-    var done = 0
+    let done = 0
 
     client.set('string key', 'string val', function (err, reply) {
       t.error(err)

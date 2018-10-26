@@ -34,7 +34,7 @@ times(5, function (n, done) {
       }, 50)
     })
 
-    var requestNo = 0
+    let requestNo = 0
 
     server.listen(function () {
       request()
@@ -56,7 +56,7 @@ times(5, function (n, done) {
 })
 
 function times (max, fn) {
-  var n = 0
+  let n = 0
   run()
   function run () {
     if (++n > max) return

@@ -14,7 +14,7 @@ var version = require('mongodb-core/package').version
 test('instrument simple command', function (t) {
   resetAgent(function (endpoint, headers, data, cb) {
     var trans = data.transactions[0]
-    var groups
+    let groups
 
     t.equal(data.transactions.length, 1)
 

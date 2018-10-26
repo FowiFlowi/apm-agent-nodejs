@@ -4,8 +4,8 @@ var Agent = require('../lib/agent')
 var Filters = require('../lib/filters')
 var symbols = require('../lib/symbols')
 
-var uncaughtExceptionListeners = process._events.uncaughtException
-var agent
+let uncaughtExceptionListeners = process._events.uncaughtException
+let agent
 
 module.exports = setup
 

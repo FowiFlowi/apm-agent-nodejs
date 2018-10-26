@@ -20,7 +20,7 @@ There are two ways to start the Elastic APM agent for Node.js:
 +
 [source,js]
 ----
-var apm = require('elastic-apm-node').start({
+const apm = require('elastic-apm-node').start({
   // add configuration options here
 })
 ----
@@ -28,7 +28,7 @@ var apm = require('elastic-apm-node').start({
 +
 [source,js]
 ----
-var apm = require('elastic-apm-node/start')
+const apm = require('elastic-apm-node/start')
 ----
 +
 If using this approach,

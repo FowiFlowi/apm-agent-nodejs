@@ -5,7 +5,7 @@ var Instrumentation = require('../../lib/instrumentation')
 var consoleLogLevel = require('console-log-level')
 
 var noop = function () {}
-var sharedInstrumentation
+let sharedInstrumentation
 
 module.exports = function mockAgent (cb) {
   var agent = {
